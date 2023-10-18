@@ -1,0 +1,162 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "NeoSoft",
+    "dateExported": "2023-10-18T18:31:27.054Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "0562e8a6-3ec8-43ac-b15f-10d0bf892b53",
+            "colId": "d69035f4-361e-4a4f-a422-c2c5b0c81d32",
+            "containerId": "",
+            "name": "GET  info",
+            "url": "http://localhost/NeoSoft/API/server.php",
+            "method": "GET",
+            "sortNum": 12500,
+            "created": "2023-10-16T10:19:09.912Z",
+            "modified": "2023-10-16T11:20:18.169Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "67bc96c4-7f99-4108-83e9-02c7b5c414d5",
+            "colId": "d69035f4-361e-4a4f-a422-c2c5b0c81d32",
+            "containerId": "",
+            "name": "GET all users",
+            "url": "http://localhost/NeoSoft/API/server.php?table=users",
+            "method": "GET",
+            "sortNum": 16250,
+            "created": "2023-10-16T08:48:43.068Z",
+            "modified": "2023-10-16T19:50:02.298Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "table",
+                    "value": "users",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "d1b823bf-443c-4dca-ab40-bb2d8ff21472",
+            "colId": "d69035f4-361e-4a4f-a422-c2c5b0c81d32",
+            "containerId": "",
+            "name": "GET one user by ID",
+            "url": "http://localhost/NeoSoft/API/server.php",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-10-16T09:55:10.495Z",
+            "modified": "2023-10-16T11:20:27.862Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"table\": \"users\",\n  \"field\": \"ID\",\n  \"value\": 1 \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a8cf8e9c-91b1-412f-864f-015993d605c6",
+            "colId": "d69035f4-361e-4a4f-a422-c2c5b0c81d32",
+            "containerId": "",
+            "name": "GET users by field",
+            "url": "http://localhost/NeoSoft/API/server.php",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-10-16T10:01:02.496Z",
+            "modified": "2023-10-16T17:40:32.037Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"table\": \"users\",\n  \"field\": \"name\",\n  \"op\": \"lk\",\n  \"value\": \"admin\" \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "80b55890-573c-4dc7-b0d0-953c22659534",
+            "colId": "d69035f4-361e-4a4f-a422-c2c5b0c81d32",
+            "containerId": "",
+            "name": "POST new user",
+            "url": "http://localhost/NeoSoft/API/server.php",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-10-16T11:14:19.945Z",
+            "modified": "2023-10-16T17:56:46.024Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"table\": \"users\",\n  \"values\": {\n      \"name\": \"Teszt Felhasználó\",\n      \"email\": \"teszt@gmail.com\",\n      \"password\": \"86f7e437faa5a7fce15d1ddcb9eaeaea377667b8\"\n  }\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "f9d54168-cacb-4ce0-9771-b1b3e81da450",
+            "colId": "d69035f4-361e-4a4f-a422-c2c5b0c81d32",
+            "containerId": "",
+            "name": "PATCH user by field",
+            "url": "http://localhost/NeoSoft/API/server.php",
+            "method": "PATCH",
+            "sortNum": 50000,
+            "created": "2023-10-16T11:22:50.633Z",
+            "modified": "2023-10-16T11:24:10.884Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"table\": \"users\",\n  \"field\": \"ID\",\n  \"op\": \"eq\",\n  \"value\": \"5\",\n  \"values\": {\n      \"name\": \"László\",\n      \"email\": \"laci@gmail.com\",\n      \"password\": \"86f7e437faa5a7fce15d1ddcb9eaeaea377667b8\"\n  }\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "fbc204da-e78d-4bc0-bd09-1f45541a1fb1",
+            "colId": "d69035f4-361e-4a4f-a422-c2c5b0c81d32",
+            "containerId": "",
+            "name": "DELETE user by field",
+            "url": "http://localhost/NeoSoft/API/server.php",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2023-10-16T17:40:41.211Z",
+            "modified": "2023-10-16T17:42:27.177Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"table\": \"users\",\n  \"field\": \"ID\",\n  \"op\": \"eq\",\n  \"value\": 4\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "2df1b0ed-30d8-43ce-b1a3-46007c78962a",
+            "colId": "d69035f4-361e-4a4f-a422-c2c5b0c81d32",
+            "containerId": "",
+            "name": "DELETE all users",
+            "url": "http://localhost/NeoSoft/API/server.php",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2023-10-16T17:42:37.924Z",
+            "modified": "2023-10-16T17:43:02.365Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"table\": \"users\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
