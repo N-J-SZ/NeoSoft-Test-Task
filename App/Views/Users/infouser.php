@@ -4,7 +4,7 @@
 
   echo '<div class="col-lg-6 offset-lg-3">
     <h3 class="mb-3 mt-3">Felhasználó információ</h3>';
-
+  if ($data != null){
     echo '
       <div class="form-floating mb-3">
         <input type="text" class="form-control" id="name" name="name" placeholder="" value="'.$data[0]->name.'" disabled>
@@ -29,11 +29,16 @@
       <div class="form-floating mb-3">
         <input type="text" class="form-control" name="status" placeholder="" value="'.($data[0]->status == 1 ? 'Aktív': 'Inaktív').' felhasználó" disabled>
         <label for="status">Státusz</label>
-      </div>
-     
-      <a href="'.URLROOT.'/Users/index" class="btn btn-secondary mb-3"><i class="bi bi-arrow-left-circle"></i>&nbsp; Vissza a felhasználók listájára...</a>
+      </div>';
 
-  </div>';
+  }
+  else
+  {
+    echo '<div class="alert alert-danger">Hibás belépési adatok!</div>';
+  }
+     
+   echo '<a href="'.URLROOT.'/Users/index" class="btn btn-secondary mb-3"><i class="bi bi-arrow-left-circle"></i>&nbsp; Vissza a felhasználók listájára...</a></div>';
+  
 
   require_once('../App/Views/footer.php');
 

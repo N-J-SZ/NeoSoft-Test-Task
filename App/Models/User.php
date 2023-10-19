@@ -141,5 +141,15 @@ class User
         return json_decode(file_get_contents($this->server, false, $context));
 
     }
+
+    function loginCheck($user){
+        $currentUser = json_decode(file_get_contents($this->server . '?table=users&field=email&value=' . $user['email']));
+        if ($currentUser != null){
+            if ($currentUser[0]->password === sha1($user['passwd'])){
+               return $currentUser; 
+            }
+        }
+        return null;
+    }
 }
 ?>

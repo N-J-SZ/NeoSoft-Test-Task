@@ -3,8 +3,15 @@
 require_once('../App/Views/header.php');
 
 echo '<h3 class="mb-3 mt-3">Felhasználók kezelése</h3>
-    <a href="'.URLROOT.'/Users/create" class="btn btn-primary mb-3"><i class="bi bi-plus-circle-fill"></i>&nbsp; Új felhasználó hozzáadása</a>
-    <a href="'.URLROOT.'/Users/deleteAll" class="btn btn-danger mb-3"><i class="bi bi-trash-fill"></i>&nbsp; Összes felhasználó törlése</a>
+    <div class="row"> 
+      <div class="col-lg-6">
+        <a href="'.URLROOT.'/Users/create" class="btn btn-primary mb-3"><i class="bi bi-plus-circle-fill"></i>&nbsp; Új felhasználó hozzáadása</a>
+        <a href="'.URLROOT.'/Users/deleteAll" class="btn btn-danger mb-3"><i class="bi bi-trash-fill"></i>&nbsp; Összes felhasználó törlése</a>
+      </div>
+      <div class="col-lg-6 text-end">
+        <a href="'.URLROOT.'/Users/login" class="btn btn-success mb-3"><i class="bi bi-person-check-fill"></i>&nbsp; Felhasználó authentikáció</a>
+      </div>
+    </div>
     <table class="table table-hover table-stripped">
       <thead class="table-secondary">
         <tr>
