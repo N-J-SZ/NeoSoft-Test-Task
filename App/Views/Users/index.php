@@ -32,7 +32,7 @@ echo '<h3 class="mb-3 mt-3">Felhasználók kezelése</h3>
               <td>'.$user->name.'</td>
               <td>'.$user->email.'</td>
               <td>'.$user->reg.'</td>
-              <td>'.($user->last != null ? $user->last : 'még nem lépett be').'</td>
+              <td>'.(($user->last != null && $user->last != '0000-00-00 00:00:00') ? $user->last : 'még nem lépett be').'</td>
               <td>
                 <div class="form-check form-switch">
                   <form method="POST" action="'.URLROOT.'/Users/switch/'.$user->ID.'" id="form'.$index.'">

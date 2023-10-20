@@ -50,13 +50,15 @@ class User
     // UPDATE USER
     public function updateUser($user)
     {
+        $user = (array) $user;
         $data = [
             'table' => 'users',
             'field' => "ID",
             'value' => $user['ID'],
             'values' => [
                 'name' => $user['name'],
-                'email' => $user['email']
+                'email' => $user['email'],
+                'last' => $user['last'] == "" ? '0000-00-00' : $user["last"]
             ]
         ];
 
@@ -143,9 +145,11 @@ class User
     }
 
     function loginCheck($user){
+        // GET user By email and passwd
         $currentUser = json_decode(file_get_contents($this->server . '?table=users&field=email&value=' . $user['email']));
         if ($currentUser != null){
-            if ($currentUser[0]->password === sha1($user['passwd'])){
+            // if the user is active state and match the login creditials
+            if ($currentUser[0]->password === sha1($user['passwd']) && $currentUser[0]->status == 1 ){
                return $currentUser; 
             }
         }

@@ -31,3 +31,4 @@
   require_once('../App/Views/footer.php');
 
 ?>
+

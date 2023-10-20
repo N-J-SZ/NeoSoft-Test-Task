@@ -7,6 +7,7 @@
     <form method="POST" action="'.URLROOT.'/Users/update/">
 
       <input type="hidden" name="ID" value="'.$data[0]->ID.'">
+      <input type="hidden" name="last" value="'.$data[0]->last.'">
 
       <div class="form-floating mb-3">
         <input type="text" class="form-control" id="name" name="name" placeholder="" value="'.$data[0]->name.'">

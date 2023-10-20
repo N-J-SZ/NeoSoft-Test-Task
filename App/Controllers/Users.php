@@ -24,7 +24,6 @@ class Users extends BaseController
     // insert new user to database
     public function store()
     {
-
         if (empty($_POST['name'] || empty($_POST['email'] || empty($_POST['passwd']) || empty($_POST['confirm'])))) {
             $_SESSION['error'] = 'Nem adtál meg minden adatot!';
             header("location: " . URLROOT . '/Users/create');
@@ -69,8 +68,8 @@ class Users extends BaseController
     // update user data in database
     public function update()
     {
-        $this->model->updateUser($_POST);
-        header("location: " . URLROOT . '/Users/index');
+      $this->model->updateUser($_POST);
+      header("location: " . URLROOT . '/Users/index');
     }
 
     // show delete user form
@@ -110,6 +109,8 @@ class Users extends BaseController
     {
         $user = ($this->model->loginCheck($_POST));
         if($user){
+            $user[0]->last = Date('Y-m-d H:i:s');
+            $this->model->updateUser($user[0]);
             $this->show($user[0]->ID);
         }
         else{

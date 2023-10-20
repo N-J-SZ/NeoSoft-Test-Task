@@ -136,7 +136,7 @@
                 }
         
                 $str = rtrim($str, ', ');
-                echo "UPDATE $table SET $str WHERE $field $op $value";
+               
                 try{
                     $affectedRows = $db->exec("UPDATE $table SET $str WHERE $field $op $value"); 
                     $results = array(
