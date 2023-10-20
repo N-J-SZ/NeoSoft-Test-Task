@@ -4,7 +4,9 @@
 
   echo '<div class="col-lg-6 offset-lg-3">
     <h3 class="mb-3 mt-3">Felhasználó törlése</h3>
-    <h6>Biztosan törlöd az alábbi felhasználót?</h6>
+    <h6 class="mb-3">
+      <i class="bi bi-exclamation-triangle-fill bi-danger" style="font-size: 50px;"></i> &nbsp; Biztosan törlöd az alábbi felhasználót? Ez a művelet nem visszavonható!
+    </h6>
     <form method="POST" action="'.URLROOT.'/Users/destroy/">
 
       <input type="hidden" name="ID" value="'.$data[0]->ID.'">
